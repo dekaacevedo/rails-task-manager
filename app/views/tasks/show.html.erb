@@ -1,0 +1,14 @@
+<h1> <%= @task.title %> </h1>
+
+<div class="bg-light p-10">
+  <p> <%= @task.details %> </p>
+</div>
+
+<div class="d-flex border-bottom">
+  <form action="">
+    <input type="checkbox">
+  </form>
+  <p>This task is not completed yet</p>
+</div>
+
+<%= link_to "Back to list", tasks_path %>

@@ -1,0 +1,15 @@
+<h1>My tasks</h1>
+
+<div class="d-flex flex-column border-bottom">
+  <% @tasks.each do |task| %>
+  <div class="d-flex ">
+    <form action="">
+      <input type="checkbox">
+    </form>
+    <p> <%= link_to task.title, task_path(task) %></p>
+  </div>
+
+  <% end %>
+</div>
+
+<%= link_to "Add a new task", tasks_new_path %>
