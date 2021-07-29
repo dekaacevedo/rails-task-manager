@@ -1,8 +1,10 @@
 <div class="border-bottom pb-4">
   <%= simple_form_for task do |f| %>
-    <%= f.input :title%>
+    <%= f.input :title %>
     <%= f.input :details %>
-    <%= f.input :completed, as: :boolean, inline_label: 'Completed' %>
+    <% if @task.new_record? == false %>
+      <%= f.input :completed, as: :boolean, inline_label: 'Completed' %>
+    <% end -%>
     <%= f.button :submit, class: 'btn btn-primary' %>
   <% end %>
 </div>
