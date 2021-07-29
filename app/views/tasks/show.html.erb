@@ -1,14 +1,30 @@
-<h1> <%= @task.title %> </h1>
-
-<div class="bg-light p-10">
-  <p> <%= @task.details %> </p>
+<div class="d-flex justify-content-between align-items-center">
+  <h1> <%= @task.title %> </h1>
+  <%= link_to task_edit_path, class: "btn btn-outline-secondary" do %>
+    <%= fa_icon "pen" %>
+    <%= "Edit this task" %>
+  <% end -%>
 </div>
 
-<div class="d-flex border-bottom">
-  <form action="">
-    <input type="checkbox">
-  </form>
-  <p>This task is not completed yet</p>
+
+<div class="bg-light border d-flex align-items-center p-4 rounded-sm">
+  <p class="m-0"> <%= @task.details %> </p>
 </div>
 
-<%= link_to "Back to list", tasks_path %>
+<div class="d-flex border-bottom mt-4">
+  <%= render "checkbox", task: @task %>
+  <% if @task.completed == true %>
+    <p class="ml-2"> This task is completed</p>
+    <% else %>
+    <p class="ml-2">This task is not completed yet</p>
+  <% end -%>
+</div>
+
+<div class="mt-4">
+  <%= link_to tasks_path do %>
+    <%= fa_icon "undo" %>
+    <%= "Back to list" %>
+  <% end -%>
+</div>
+
+

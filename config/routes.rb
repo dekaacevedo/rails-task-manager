@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'tasks/new', to: 'tasks#new'
 
   # edit
-  get 'tasks/:id/edit', to: 'tasks#edit'
+  get 'tasks/:id/edit', to: 'tasks#edit', as: :task_edit
 
   # read
   # Get one taks
